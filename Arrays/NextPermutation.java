@@ -1,4 +1,6 @@
 // Java program to find the next lexicographically greater permutation of an array
+
+// Asked by Infosys, Flipkart, Amazon, Microsoft, FactSet, Hike, MakeMyTrip, Google, Qualcomm and Salesforce
 public class NextPermutation {
     static void nextPermutation(int[] arr) {
         int n = arr.length;

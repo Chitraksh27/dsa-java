@@ -1,4 +1,7 @@
 // Java program to find the maximum profit from stock buy and sell if multiple transactions are allowed.
+
+// Asked by Paytm, Flipkart, Morgan Stanley, Accolite, Amazon, Microsoft, Samsung, D-E-Shaw, Hike, MakeMyTrip, Ola Cabs, Oracle, Walmart, Goldman Sachs, Directi, Intuit, SAP Labs, Quikr, Facebook, Salesforce, Pubmatic, Sapient and Swiggy
+
 public class StockBuyAndSell1 {
     static int maximumProfit(int[] prices) {
         int profit = 0;

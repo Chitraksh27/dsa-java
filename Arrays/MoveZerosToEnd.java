@@ -1,5 +1,7 @@
 // Java program to move all zeros to end of array while maintaining the relative order of all non-zero elements
 
+// Asked by Paytm, Amazon, Microsoft, Samsung, SAP Labs, LinkdIn and Bloomberg
+
 public class MoveZerosToEnd {
     public static void pushZerostoEnd(int [] arr) {
         int i = 0;

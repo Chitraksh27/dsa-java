@@ -1,5 +1,7 @@
 // Java program to reverse an array
 
+// Asked by Bloomberg, Facebook, TCS, Adobe, Google, Infosys, Capgemini, Morgan Stanley, Amazon, Microsoft, Apple, Yahoo, PayPal and Uber
+
 public class ReverseArray {
     public static void reverseArray(int[] arr) {
         int i = 0;

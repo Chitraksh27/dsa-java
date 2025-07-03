@@ -1,5 +1,7 @@
 // Java program to find the second largest element in an array
 
+// Asked by SAP Labs and Rockstand
+
 class SecondLargest {
     public static int getSecondLargest(int[] arr) {
         int max = Integer.MIN_VALUE;

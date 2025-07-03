@@ -1,5 +1,7 @@
 // Java program to left rotate an array by d positions
 
+// Asked by Amazon, Microsoft and MAQ Software
+
 public class LeftRotatebyD {
     static void reverseArray(int[] arr, int start, int end) {
         while (start < end) {
