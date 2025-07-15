@@ -1,31 +1,26 @@
 
 import java.util.*;
 
-// Java program to check if two strings are anagrams of each other
-
-// Asked by Flipkart, Directi, Adobe, Google, Nagarro, Media.net
-
 public class Anagram {
-    static boolean areAnagrams(String s1, String s2) {
+    public static boolean isAnagram(String s1, String s2) {
         if (s1.length() != s2.length())
             return false;
+        
+        char[] chars1 = s1.toCharArray();
+        char[] chars2 = s2.toCharArray();
 
-        char[] arr1 = s1.toCharArray();
-        char[] arr2 = s2.toCharArray();
+        Arrays.sort(chars1);
+        Arrays.sort(chars2);
 
-        Arrays.sort(arr1);
-        Arrays.sort(arr2);
+        return Arrays.equals(chars1, chars2);
 
-        return Arrays.equals(arr1, arr2);
+
+
     }
     public static void main(String[] args) {
-        String s1 = "anagram";
-        String s2 = "nagaram";
+        String s1 = "listen";
+        String s2 = "silent";
 
-        if (areAnagrams(s1, s2)) {
-            System.out.println("The strings are anagrams of each other.");
-        } else {
-            System.out.println("The strings are not anagrams of each other.");
-        }
+        System.out.println(isAnagram(s1, s2));
     }
 }

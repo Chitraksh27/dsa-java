@@ -1,16 +1,14 @@
-// Java program to return all indices of a pattern in a text using KMP algorithm
+// Java program to return all indices of occurrences of one string in another using KMP algorithm
 
 // Asked by Microsoft
 
-import java.util.ArrayList;
+import java.util.*;
 
-public class KMPAlgorithm {
-    static void constructLPS(String pat, int[] lps) {
+public class KMPAlgo {
+    static void constructLPS(String pat, int lps[]) {
         int len = 0;
         lps[0] = 0;
-        
         int i = 1;
-
         while (i < pat.length()) {
             if (pat.charAt(i) == pat.charAt(len)) {
                 len++;
@@ -18,9 +16,8 @@ public class KMPAlgorithm {
                 i++;
             }
             else {
-                if (len != 0) {
+                if (len != 0) 
                     len = lps[len - 1];
-                }
                 else {
                     lps[i] = 0;
                     i++;
@@ -30,43 +27,41 @@ public class KMPAlgorithm {
     }
     static ArrayList<Integer> search(String pat, String txt) {
         ArrayList<Integer> result = new ArrayList<>();
-        int n = txt.length();
         int m = pat.length();
-        int[] lps = new int[m];
+        int n = txt.length();
+        int [] lps = new int[m];
 
         constructLPS(pat, lps);
-        int i = 0;
-        int j = 0;
+        int i = 0, j = 0;
 
         while (i < n) {
             if (txt.charAt(i) == pat.charAt(j)) {
                 i++;
                 j++;
             }
-
             if (j == m) {
                 result.add(i - j);
                 j = lps[j - 1];
             }
-            else if (i < n && txt.charAt(i) != pat.charAt(j)){
-                if (j != 0) {
+
+            else if (i < n && txt.charAt(i) != pat.charAt(j)) {
+                if (j != 0)
                     j = lps[j - 1];
-                }
-                else {
+                else
                     i++;
-                }
             }
         }
+        
         return result;
     }
     public static void main(String[] args) {
-        String txt = "aabaacaadaabaaba";
-        String pat = "aaba";
+        String txt = "abcab";
+        String pat = "ab";
 
-        ArrayList<Integer> res = search(pat, txt);
+        ArrayList<Integer> indices = search(pat, txt);
 
-        for (int i = 0; i < res.size(); i++) {
-            System.out.print(res.get(i) + " ");
+        for (Integer in : indices) {
+            System.out.print(in + " ");
         }
     }
 }
